@@ -1,0 +1,9 @@
+<template>
+
+    <template for:each={linkList} for:item="item" for:index="index">
+        <p key={item.index}>
+            <a class="slds-text-link" href={item.link} target="_blank">{item.label}</a>
+        </p>
+    </template>    
+    
+</template>

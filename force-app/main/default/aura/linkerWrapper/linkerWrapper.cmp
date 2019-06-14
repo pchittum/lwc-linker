@@ -1,4 +1,5 @@
 <aura:component implements="flexipage:availableForAllPageTypes">
 
+    <c:linker/>
 
 </aura:component>	

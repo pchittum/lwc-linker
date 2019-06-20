@@ -1,9 +1,32 @@
 <template>
-    
-    <template for:each={linkList} for:item="item" for:index="index">
-        <p key={item.index}>
-            <a class="slds-text-link" href={item.link} target="_blank">{item.label}</a>
-        </p>
-    </template>    
-    
+    <p class="slds-text-heading_small">{activeSectionMessage}</p>
+
+    <lightning-button onclick={handleAddLink} label="Add Link"></lightning-button>
+
+    <lightning-accordion class="example-accordion"
+                         onsectiontoggle={handleToggleSection}
+                         active-section-name="GlobalLinks">
+        <lightning-accordion-section name="GlobalLinks" label="Company Links">
+            <p>Company-wide Links</p>
+            <template for:each={linkList} for:item="item" for:index="index">
+                <p key={item.index}>
+                    <a class="slds-text-link" href={item.link} target="_blank">{item.label}</a>
+                </p>
+            </template>    
+        </lightning-accordion-section>
+        <lightning-accordion-section name="UserLinks" label="Custom Links">
+            <lightning-button-menu slot="actions"
+                                  alternative-text="Show menu"
+                                  icon-size="x-small"
+                                  menu-alignment="right">
+                <lightning-menu-item value="Edit" label="Edit Links"></lightning-menu-item>
+            </lightning-button-menu>
+            <p>Personal Custom Links</p>
+            <template for:each={linkList} for:item="item" for:index="index">
+                <p key={item.index}>
+                    <a class="slds-text-link" href={item.link} target="_blank">{item.label}</a>
+                </p>
+            </template>    
+        </lightning-accordion-section>
+    </lightning-accordion>
 </template>

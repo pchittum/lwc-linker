@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Internal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>For links that link to items in this org</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Append org domain onto relative url specified here.</inlineHelpText>
+    <label>Is Internal</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
